@@ -18,12 +18,12 @@ const Footer = () => {
             <div className="flex items-center mb-6">
               <Building className="h-8 w-8 text-construction-orange mr-3" />
               <h3 className="text-2xl font-bold">
-                <span className="text-construction-orange">Craft</span> Construction
+                <span className="text-construction-orange">Prestige</span> Design & Builders
               </h3>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
-              Building excellence since 1998. Your trusted partner for all construction 
-              needs with a commitment to quality, safety, and client satisfaction.
+              Building excellence since 1998. Your trusted partner for design and construction 
+              needs with a commitment to quality, innovation, and client satisfaction.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-construction-orange transition-colors">
@@ -121,7 +121,7 @@ const Footer = () => {
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-construction-orange flex-shrink-0" />
                 <div className="text-gray-300">
-                  <p>info@craftconstruction.com</p>
+                  <p>info@prestigedesignbuilders.com</p>
                 </div>
               </div>
             </div>
@@ -131,7 +131,7 @@ const Footer = () => {
         <div className="border-t border-gray-600 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-300 mb-4 md:mb-0">
-              © 2024 Craft Construction. All rights reserved.
+              © 2024 Prestige Design & Builders. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm">
               <a href="#" className="text-gray-300 hover:text-construction-orange transition-colors">

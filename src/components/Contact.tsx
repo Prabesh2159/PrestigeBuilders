@@ -48,7 +48,7 @@ const Contact = () => {
           </h2>
           <p className="text-xl text-construction-steel max-w-3xl mx-auto">
             Ready to start your construction project? Contact us today for a free consultation 
-            and detailed quote tailored to your specific needs.
+            and detailed information tailored to your specific needs.
           </p>
         </div>
 
@@ -79,8 +79,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-construction-gray mb-1">Email</h3>
-                      <p className="text-construction-steel">info@craftconstruction.com</p>
-                      <p className="text-construction-steel">quotes@craftconstruction.com</p>
+                      <p className="text-construction-steel">info@prestigedesignbuilders.com</p>
+                      <p className="text-construction-steel">projects@prestigedesignbuilders.com</p>
                     </div>
                   </div>
                 </CardContent>
@@ -109,9 +109,9 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-construction-gray mb-1">Hours</h3>
-                      <p className="text-construction-steel">Mon - Fri: 7:00 AM - 6:00 PM</p>
-                      <p className="text-construction-steel">Sat: 8:00 AM - 4:00 PM</p>
-                      <p className="text-construction-steel">Sun: Emergency Only</p>
+                      <p className="text-construction-steel">Mon - Fri: 8:00 AM - 7:00 PM</p>
+                      <p className="text-construction-steel">Sat: Emergency Only</p>
+                      <p className="text-construction-steel">Sun: Closed</p>
                     </div>
                   </div>
                 </CardContent>
@@ -123,7 +123,7 @@ const Contact = () => {
           <div className="lg:col-span-2">
             <Card className="border-0 shadow-lg">
               <CardHeader>
-                <CardTitle className="text-2xl text-construction-gray">Request a Quote</CardTitle>
+                <CardTitle className="text-2xl text-construction-gray">Contact Us</CardTitle>
               </CardHeader>
               <CardContent>
                 <form onSubmit={handleSubmit} className="space-y-6">

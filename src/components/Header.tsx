@@ -1,7 +1,6 @@
 
 import { useState } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,11 +25,11 @@ const Header = () => {
             </div>
             <div className="flex items-center space-x-2">
               <Mail className="h-4 w-4 text-construction-orange" />
-              <span>info@craftconstruction.com</span>
+              <span>info@prestigedesignbuilders.com</span>
             </div>
           </div>
           <div className="text-construction-gray">
-            Mon - Fri: 7:00 AM - 6:00 PM
+            Mon - Fri: 8:00 AM - 7:00 PM
           </div>
         </div>
 
@@ -38,7 +37,7 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <h1 className="text-2xl font-bold text-construction-gray">
-              <span className="text-construction-orange">Craft</span> Construction
+              <span className="text-construction-orange">Prestige</span> Design & Builders
             </h1>
           </div>
 
@@ -75,15 +74,6 @@ const Header = () => {
               Contact
             </button>
           </nav>
-
-          <div className="hidden md:block">
-            <Button 
-              onClick={() => scrollToSection('contact')}
-              className="bg-construction-orange hover:bg-construction-darkOrange text-white"
-            >
-              Get Quote
-            </Button>
-          </div>
 
           {/* Mobile menu button */}
           <button
@@ -128,12 +118,6 @@ const Header = () => {
               >
                 Contact
               </button>
-              <Button 
-                onClick={() => scrollToSection('contact')}
-                className="bg-construction-orange hover:bg-construction-darkOrange text-white w-fit"
-              >
-                Get Quote
-              </Button>
             </nav>
           </div>
         )}

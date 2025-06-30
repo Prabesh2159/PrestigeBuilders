@@ -23,13 +23,13 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4">
         <div className="max-w-4xl">
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in-up">
-            Building Your
-            <span className="block text-construction-orange">Dreams Into Reality</span>
+            Designing & Building
+            <span className="block text-construction-orange">Excellence Together</span>
           </h1>
           
           <p className="text-xl md:text-2xl text-gray-200 mb-8 animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            With over 25 years of experience, we deliver exceptional construction services 
-            that exceed expectations and stand the test of time.
+            With over 25 years of experience in design and construction, we create 
+            exceptional spaces that blend functionality with aesthetic appeal.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
@@ -47,7 +47,7 @@ const Hero = () => {
               size="lg"
               className="border-white text-white hover:bg-white hover:text-construction-gray text-lg px-8 py-4"
             >
-              Get Free Quote
+              Contact Us
             </Button>
           </div>
 
