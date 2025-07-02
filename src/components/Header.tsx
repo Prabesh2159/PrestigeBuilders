@@ -1,7 +1,13 @@
+
 import { useState } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 
 const BRAND_NAME = "Prestige Design & Builders";
+
+interface HeaderProps {
+  language: "english" | "nepali";
+  onLanguageChange: (language: "english" | "nepali") => void;
+}
 
 const content = {
   english: {
@@ -20,9 +26,8 @@ const content = {
   },
 };
 
-const Header = () => {
+const Header = ({ language, onLanguageChange }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState<"english" | "nepali">("english");
 
   const t = content[language];
 
@@ -35,7 +40,7 @@ const Header = () => {
   };
 
   const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "english" ? "nepali" : "english"));
+    onLanguageChange(language === "english" ? "nepali" : "english");
   };
 
   const sectionIds = ["home", "services", "projects", "about", "contact"];

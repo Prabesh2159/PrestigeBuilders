@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
@@ -8,15 +9,17 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  const [language, setLanguage] = useState<"english" | "nepali">("english");
+
   return (
     <div className="min-h-screen bg-white">
-      <Header />
-      <Hero />
-      <Services />
-      <Projects />
-      <About />
-      <Contact />
-      <Footer />
+      <Header language={language} onLanguageChange={setLanguage} />
+      <Hero language={language} />
+      <Services language={language} />
+      <Projects language={language} />
+      <About language={language} />
+      <Contact language={language} />
+      <Footer language={language} />
     </div>
   );
 };
