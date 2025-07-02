@@ -1,6 +1,8 @@
 
 import { useState } from "react";
 import ImageModal from "./ImageModal";
+import DosDonts from "./DosDonts";
+import SteelBenefits from "./SteelBenefits";
 
 interface ProjectsProps {
   language: "english" | "nepali";
@@ -49,57 +51,65 @@ const Projects = ({ language }: ProjectsProps) => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-white scroll-mt-24">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-construction-gray mb-4">
-            {t.title}
-          </h2>
-          <p className="text-xl text-construction-steel max-w-3xl mx-auto">
-            {t.subtitle}
-          </p>
-        </div>
-
-        {/* Project Gallery Section */}
-        <div className="mb-12">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl md:text-4xl font-bold text-construction-gray mb-4">
-              {t.galleryTitle}
-            </h3>
+    <>
+      <section id="projects" className="py-20 bg-white scroll-mt-24">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-construction-gray mb-4">
+              {t.title}
+            </h2>
+            <p className="text-xl text-construction-steel max-w-3xl mx-auto">
+              {t.subtitle}
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {t.projects.map((project, index) => (
-              <div
-                key={index}
-                className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer"
-                onClick={() => handleImageClick(project.image, project.title)}
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
-                  <div className="text-center transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                    <h4 className="text-white text-lg font-semibold mb-2">
-                      {project.title}
-                    </h4>
+          {/* Project Gallery Section */}
+          <div className="mb-12">
+            <div className="text-center mb-12">
+              <h3 className="text-3xl md:text-4xl font-bold text-construction-gray mb-4">
+                {t.galleryTitle}
+              </h3>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {t.projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer"
+                  onClick={() => handleImageClick(project.image, project.title)}
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition-all duration-300 flex items-center justify-center">
+                    <div className="text-center transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                      <h4 className="text-white text-lg font-semibold mb-2">
+                        {project.title}
+                      </h4>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
-      </div>
 
-      <ImageModal
-        isOpen={selectedImage !== null}
-        onClose={closeModal}
-        imageSrc={selectedImage?.src || ""}
-        imageTitle={selectedImage?.title || ""}
-      />
-    </section>
+        <ImageModal
+          isOpen={selectedImage !== null}
+          onClose={closeModal}
+          imageSrc={selectedImage?.src || ""}
+          imageTitle={selectedImage?.title || ""}
+        />
+      </section>
+
+      {/* Do's and Don'ts Section */}
+      <DosDonts language={language} />
+
+      {/* Steel Benefits Section */}
+      <SteelBenefits language={language} />
+    </>
   );
 };
 

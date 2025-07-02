@@ -23,10 +23,10 @@ const Footer = ({ language }: FooterProps) => {
       ],
       contactInfo: "Contact Info",
       address: {
-        line1: "123 Construction Ave",
-        line2: "Building City, BC 12345"
+        line1: "Main Road, Birtamode",
+        line2: "Jhapa, Nepal"
       },
-      phone: "(555) 123-4567",
+      phone: "(977) 23-123-4567",
       email: "info@prestigedesignbuilders.com",
       copyright: "© 2024 Prestige Design & Builders. All rights reserved.",
       footerLinks: ["Privacy Policy", "Terms of Service", "License & Insurance"]
@@ -47,10 +47,10 @@ const Footer = ({ language }: FooterProps) => {
       ],
       contactInfo: "सम्पर्क जानकारी",
       address: {
-        line1: "१२३ निर्माण एवेन्यू",
-        line2: "बिल्डिङ सिटी, BC १२३४५"
+        line1: "मुख्य सडक, बिर्तामोड",
+        line2: "झापा, नेपाल"
       },
-      phone: "(५५५) १२३-४५६७",
+      phone: "(९७७) २३-१२३-४५६७",
       email: "info@prestigedesignbuilders.com",
       copyright: "© २०२४ प्रेस्टिज डिजाइन र बिल्डर्स। सबै अधिकार सुरक्षित।",
       footerLinks: ["गोपनीयता नीति", "सेवाका सर्तहरू", "लाइसेन्स र बीमा"]
