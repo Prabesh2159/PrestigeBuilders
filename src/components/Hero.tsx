@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Award, Users } from "lucide-react";
 
@@ -16,8 +15,9 @@ const Hero = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')`
-        }}
+  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/yo.jpg')`
+}}
+
       />
       
       <div className="relative z-10 container mx-auto px-4">
@@ -41,14 +41,19 @@ const Hero = () => {
               View Our Work
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button 
-              onClick={() => scrollToSection('contact')}
-              variant="outline" 
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-construction-gray text-lg px-8 py-4"
-            >
-              Contact Us
-            </Button>
+          <Button
+       onClick={() => scrollToSection('contact')}
+      variant="outline"
+      size="lg"
+      className="relative text-white text-lg px-8 py-4 border border-white bg-white/10 backdrop-blur-sm group transition-all duration-500 overflow-hidden hover:bg-white hover:text-construction-gray"
+>
+  <span className="group-hover:blur-sm transition-all duration-500">
+    Contact Us
+  </span>
+</Button>
+
+
+            
           </div>
 
           {/* Stats */}

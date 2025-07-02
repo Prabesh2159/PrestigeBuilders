@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -40,7 +39,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="scroll-mt-32 py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-construction-gray mb-4">
@@ -54,79 +53,53 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information */}
-          <div className="lg:col-span-1">
-            <div className="space-y-6">
-              <Card className="border-0 shadow-lg">
+          <div className="lg:col-span-1 flex flex-col gap-6">
+            {[{
+              icon: Phone,
+              title: "Phone",
+              lines: ["(555) 123-4567", "(555) 123-4568"]
+            }, {
+              icon: Mail,
+              title: "Email",
+              lines: ["info@prestigedesignbuilders.com", "projects@prestigedesignbuilders.com"]
+            }, {
+              icon: MapPin,
+              title: "Address",
+              lines: ["123 Construction Ave", "Building City, BC 12345"]
+            }, {
+              icon: Clock,
+              title: "Hours",
+              lines: ["Sun - Fri: 8:00 AM - 7:00 PM", "Sat: Emergency Only", "Sat: Closed"]
+            }].map((info, index) => (
+              <Card key={index} className="border-0 shadow-lg h-full">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="p-3 bg-construction-orange/10 rounded-full">
-                      <Phone className="h-6 w-6 text-construction-orange" />
+                      <info.icon className="h-6 w-6 text-construction-orange" />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-construction-gray mb-1">Phone</h3>
-                      <p className="text-construction-steel">(555) 123-4567</p>
-                      <p className="text-construction-steel">(555) 123-4568</p>
+                      <h3 className="font-semibold text-construction-gray mb-1">{info.title}</h3>
+                      {info.lines.map((line, i) => (
+                        <p key={i} className="text-construction-steel">{line}</p>
+                      ))}
                     </div>
                   </div>
                 </CardContent>
               </Card>
-
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-construction-orange/10 rounded-full">
-                      <Mail className="h-6 w-6 text-construction-orange" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-construction-gray mb-1">Email</h3>
-                      <p className="text-construction-steel">info@prestigedesignbuilders.com</p>
-                      <p className="text-construction-steel">projects@prestigedesignbuilders.com</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-construction-orange/10 rounded-full">
-                      <MapPin className="h-6 w-6 text-construction-orange" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-construction-gray mb-1">Address</h3>
-                      <p className="text-construction-steel">123 Construction Ave</p>
-                      <p className="text-construction-steel">Building City, BC 12345</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="p-3 bg-construction-orange/10 rounded-full">
-                      <Clock className="h-6 w-6 text-construction-orange" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-construction-gray mb-1">Hours</h3>
-                      <p className="text-construction-steel">Mon - Fri: 8:00 AM - 7:00 PM</p>
-                      <p className="text-construction-steel">Sat: Emergency Only</p>
-                      <p className="text-construction-steel">Sun: Closed</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+            ))}
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-2">
-            <Card className="border-0 shadow-lg">
+          <div className="lg:col-span-2 h-full">
+            <Card className="border-0 shadow-lg h-full flex flex-col">
               <CardHeader>
                 <CardTitle className="text-2xl text-construction-gray">Contact Us</CardTitle>
               </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <CardContent className="flex-grow flex flex-col justify-between">
+                <form 
+                  onSubmit={handleSubmit} 
+                  className="space-y-6 flex-grow flex flex-col justify-between h-full"
+                >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-construction-gray mb-2">
@@ -206,7 +179,7 @@ const Contact = () => {
                   <Button 
                     type="submit"
                     size="lg"
-                    className="w-full bg-construction-orange hover:bg-construction-darkOrange text-white"
+                    className="w-full bg-construction-orange hover:bg-construction-darkOrange text-white mt-4"
                   >
                     Send Message
                   </Button>

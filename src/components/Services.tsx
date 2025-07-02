@@ -1,4 +1,3 @@
-
 import { Building, Hammer, Wrench, Construction, Home, Truck } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -37,7 +36,8 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-construction-lightGray">
+    // Apply the ID and scroll-mt class directly to the section
+    <section id="services" className="relative bg-white py-20 scroll-mt-32"> 
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-construction-gray mb-4">
@@ -50,9 +50,9 @@ const Services = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <Card 
-              key={index} 
+              key={service.title} 
               className="hover:shadow-xl transition-shadow duration-300 border-0 shadow-lg hover:transform hover:scale-105"
             >
               <CardHeader className="text-center pb-4">
@@ -75,5 +75,5 @@ const Services = () => {
     </section>
   );
 };
-
+ 
 export default Services;
