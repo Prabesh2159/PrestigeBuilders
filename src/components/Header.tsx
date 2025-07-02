@@ -6,7 +6,7 @@ const BRAND_NAME = "Prestige Design & Builders";
 
 interface HeaderProps {
   language: "english" | "nepali";
-  onLanguageChange: (language: "english" | "nepali") => void;
+  onLanguageChange: () => void;
 }
 
 const content = {
@@ -37,10 +37,6 @@ const Header = ({ language, onLanguageChange }: HeaderProps) => {
       element.scrollIntoView({ behavior: "smooth" });
     }
     setIsMenuOpen(false);
-  };
-
-  const toggleLanguage = () => {
-    onLanguageChange(language === "english" ? "nepali" : "english");
   };
 
   const sectionIds = ["home", "services", "projects", "about", "contact"];
@@ -85,7 +81,7 @@ const Header = ({ language, onLanguageChange }: HeaderProps) => {
 
             {/* Language Toggle */}
             <button
-              onClick={toggleLanguage}
+              onClick={onLanguageChange}
               className="text-construction-orange border border-construction-orange px-3 py-1 rounded hover:bg-construction-orange hover:text-white transition"
             >
               {t.toggle}
@@ -114,7 +110,7 @@ const Header = ({ language, onLanguageChange }: HeaderProps) => {
 
               {/* Mobile Language Toggle */}
               <button
-                onClick={toggleLanguage}
+                onClick={onLanguageChange}
                 className="text-left text-construction-orange border border-construction-orange px-3 py-1 rounded hover:bg-construction-orange hover:text-white transition"
               >
                 {t.toggle}
