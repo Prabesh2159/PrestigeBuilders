@@ -1,5 +1,5 @@
-
 import { Building, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import GoogleMap from "./GoogleMap";
 
 interface FooterProps {
   language: "english" | "nepali";
@@ -152,6 +152,9 @@ const Footer = ({ language }: FooterProps) => {
             </div>
           </div>
         </div>
+
+        {/* Google Map Section */}
+        <GoogleMap language={language} />
 
         <div className="border-t border-gray-600 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">

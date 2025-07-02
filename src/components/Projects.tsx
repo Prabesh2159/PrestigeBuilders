@@ -1,19 +1,19 @@
 
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { useState } from "react";
+import ImageModal from "./ImageModal";
 
 interface ProjectsProps {
   language: "english" | "nepali";
 }
 
 const Projects = ({ language }: ProjectsProps) => {
+  const [selectedImage, setSelectedImage] = useState<{src: string, title: string} | null>(null);
+
   const content = {
     english: {
       title: "Our Projects",
       subtitle: "Explore our portfolio of successful construction projects that showcase our expertise across commercial, residential, and industrial sectors.",
       galleryTitle: "Project Gallery",
-      viewAll: "View All Projects",
       projects: [
         { title: "Modern Ceiling", image: "/images/roofing1.jpg" },
         { title: "Modern Kitchen", image: "/images/kitchen.jpg" },
@@ -27,7 +27,6 @@ const Projects = ({ language }: ProjectsProps) => {
       title: "हाम्रा परियोजनाहरू",
       subtitle: "व्यावसायिक, आवासीय, र औद्योगिक क्षेत्रहरूमा हाम्रो विशेषज्ञता प्रदर्शन गर्ने सफल निर्माण परियोजनाहरूको हाम्रो पोर्टफोलियो अन्वेषण गर्नुहोस्।",
       galleryTitle: "परियोजना ग्यालरी",
-      viewAll: "सबै परियोजनाहरू हेर्नुहोस्",
       projects: [
         { title: "आधुनिक छत", image: "/images/roofing1.jpg" },
         { title: "आधुनिक भान्साघर", image: "/images/kitchen.jpg" },
@@ -40,6 +39,14 @@ const Projects = ({ language }: ProjectsProps) => {
   };
 
   const t = content[language];
+
+  const handleImageClick = (image: string, title: string) => {
+    setSelectedImage({ src: image, title });
+  };
+
+  const closeModal = () => {
+    setSelectedImage(null);
+  };
 
   return (
     <section id="projects" className="py-20 bg-white scroll-mt-24">
@@ -66,6 +73,7 @@ const Projects = ({ language }: ProjectsProps) => {
               <div
                 key={index}
                 className="relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 group cursor-pointer"
+                onClick={() => handleImageClick(project.image, project.title)}
               >
                 <img
                   src={project.image}
@@ -77,23 +85,20 @@ const Projects = ({ language }: ProjectsProps) => {
                     <h4 className="text-white text-lg font-semibold mb-2">
                       {project.title}
                     </h4>
-                    <ExternalLink className="h-6 w-6 text-white mx-auto" />
                   </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
-
-        <div className="text-center">
-          <Button
-            size="lg"
-            className="bg-construction-orange hover:bg-construction-darkOrange text-white px-8 py-4"
-          >
-            {t.viewAll}
-          </Button>
-        </div>
       </div>
+
+      <ImageModal
+        isOpen={selectedImage !== null}
+        onClose={closeModal}
+        imageSrc={selectedImage?.src || ""}
+        imageTitle={selectedImage?.title || ""}
+      />
     </section>
   );
 };
