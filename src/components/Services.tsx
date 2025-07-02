@@ -1,3 +1,4 @@
+
 import { Building, Hammer, Wrench, Construction, Home, Truck } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -36,8 +37,8 @@ const Services = () => {
   ];
 
   return (
-    // Apply the ID and scroll-mt class directly to the section
-    <section id="services" className="relative bg-white py-20 scroll-mt-32"> 
+    // Increased scroll margin to better account for the sticky header
+    <section id="services" className="relative bg-white py-20 scroll-mt-40"> 
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-construction-gray mb-4">
